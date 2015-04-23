@@ -17,6 +17,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -88,4 +89,15 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  # rspec-rails 3 will no longer automatically infer an example group's spec type
+  # from the file location. You can explicitly opt-in to the feature using this
+  # config option.
+  # To explicitly tag specs without using automatic inference, set the `:type`
+  # metadata manually:
+  #
+  #     describe ThingsController, :type => :controller do
+  #       # Equivalent to being in spec/controllers
+  #     end
+  config.infer_spec_type_from_file_location!
 end
